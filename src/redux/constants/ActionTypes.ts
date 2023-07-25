@@ -1,1 +1,2 @@
 export const DRAWER_ACTION = "DRAWER";
+export const PRODUCT_DATA_ACTION = "GET_PRODUCT_DATA";

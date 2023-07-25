@@ -13,11 +13,11 @@ const Navbar: React.FC = () => {
     const root = document.getElementById("root");
     if (root) {
       if (mode) {
-        root.style.backgroundColor = "black";
-        root.style.color = "gray";
+        root.style.backgroundColor = "#000";
+        root.style.color = "#fff";
       } else {
-        root.style.backgroundColor = "white";
-        root.style.color = "black";
+        root.style.backgroundColor = "#fff";
+        root.style.color = "#000";
       }
     }
   }, [mode]);
@@ -27,7 +27,9 @@ const Navbar: React.FC = () => {
         <p>E-Commerce</p>
       </div>
       <div className="navbar">
-        <div className="navbar-left">E-Commerce</div>
+        <div className="navbar-left">
+          <a href="#">E-Commerce</a>
+        </div>
         <div className="navbar-center">
           <input type="text" placeholder="Search..." className="navbar-input" />
         </div>
@@ -37,7 +39,7 @@ const Navbar: React.FC = () => {
             className="basket"
           >
             <BsBasket3Fill className="icon" size={22} />
-            <span className="basket-quantity">5</span>
+            <span className="basket-quantity">x</span>
           </div>
           <div onClick={() => setMode(!mode)}>
             {mode ? (

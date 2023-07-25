@@ -1,0 +1,51 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 25rem;
+  border-radius: 4rem;
+  margin: 1rem;
+  border: 3px solid;
+}
+
+.product-image {
+  height: 8rem;
+  margin-top: 2rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.product-title {
+  height: 4rem;
+  margin: 1rem 1rem 0;
+  text-align: center;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.product-category {
+  margin-bottom: 2rem;
+}
+
+.product-category span {
+  font-weight: bold;
+}
+
+.btn {
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  background-color: #0eadb5;
+  color: #000;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #0eadb5;
+}
