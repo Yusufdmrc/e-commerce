@@ -1,0 +1,55 @@
+.navbar-top {
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: #0eadb5;
+  padding: 1.25rem;
+  text-align: center;
+  border-top: 0.0625rem solid #dee0ea;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
+}
+
+.navbar-left {
+  margin-left: 2.5rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+  padding: 1.25rem;
+  margin-right: 5rem;
+}
+
+.navbar-input {
+  border: 0.0625rem solid #0eadb5;
+  outline: none;
+  border-radius: 1.25rem;
+  padding: 0.625rem;
+  width: 15.625rem;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.basket {
+  position: relative;
+}
+
+.basket-quantity {
+  background-color: rgb(200, 149, 21);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.125rem;
+  border-radius: 100%;
+  position: absolute;
+  top: -0.625rem;
+  left: 1.375rem;
+}

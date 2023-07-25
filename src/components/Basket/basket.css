@@ -1,0 +1,23 @@
+.basket-container {
+  position: fixed;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 100;
+  border: 0.1875rem solid #cb8e13;
+  margin-top: 4rem;
+  background-color: #fff;
+}
+
+.basket-header {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.basket-title {
+  font-size: 2rem;
+}
