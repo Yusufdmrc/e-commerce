@@ -10,25 +10,25 @@
 }
 
 .product-image {
-  height: 8rem;
+  height: 8.75rem;
   margin-top: 2rem;
   object-fit: cover;
   cursor: pointer;
 }
 
 .product-title {
-  height: 4rem;
-  margin: 1rem 1rem 0;
+  height: 3rem;
+  margin-top: 1rem;
   text-align: center;
 }
 
 .product-price {
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin: 1rem;
 }
 
 .product-category {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .product-category span {

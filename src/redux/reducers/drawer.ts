@@ -1,6 +1,6 @@
 import { DRAWER_ACTION } from "../constants/ActionTypes";
 
-interface State {
+export interface DrawerState {
   drawer: boolean;
 }
 
@@ -10,7 +10,7 @@ interface Action {
 }
 
 export const drawerReducer = (
-  state: State = { drawer: false },
+  state: DrawerState = { drawer: false },
   action: Action
 ) => {
   switch (action.type) {

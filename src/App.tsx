@@ -6,10 +6,10 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Basket from "./components/Basket/Basket";
 import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 function App() {
-  const { drawer } = useSelector((state) => state.drawer);
-  console.log("drawer", drawer);
+  const { drawer } = useSelector((state: RootState) => state.drawer);
 
   return (
     <div className="App">
@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/info:id" element={<Info />} />
+          <Route path="/info/:id" element={<Info />} />
         </Routes>
         {drawer && <Basket />}
         <Footer />

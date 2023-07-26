@@ -18,8 +18,8 @@ const Home = () => {
   return (
     <div className="product-container">
       {productData &&
-        productData.map((product: ProductData, index: number) => {
-          return <Products product={product} key={index} />;
+        productData.map((product: ProductData) => {
+          return <Products product={product} key={product.id} />;
         })}
     </div>
   );

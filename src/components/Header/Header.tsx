@@ -24,11 +24,11 @@ const Navbar: React.FC = () => {
   return (
     <header>
       <div className="navbar-top">
-        <p>E-Commerce</p>
+        <a href="/">E-Commerce</a>
       </div>
       <div className="navbar">
         <div className="navbar-left">
-          <a href="#">E-Commerce</a>
+          <p className="icon">E-Commerce</p>
         </div>
         <div className="navbar-center">
           <input type="text" placeholder="Search..." className="navbar-input" />

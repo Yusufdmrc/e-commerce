@@ -1,2 +1,3 @@
 export const DRAWER_ACTION = "DRAWER";
 export const PRODUCT_DATA_ACTION = "GET_PRODUCT_DATA";
+export const PRODUCT_INFO_ACTION = "GET_INFO";

@@ -1,6 +1,13 @@
 import "./products.css";
+import { ProductData } from "../../redux/reducers/productData";
 
-export const Products = ({ product }) => {
+interface ProductsProps {
+  product: ProductData;
+}
+
+export const Products: React.FC<ProductsProps> = ({
+  product,
+}: ProductsProps) => {
   return (
     <div className="product">
       <img
@@ -10,9 +17,9 @@ export const Products = ({ product }) => {
         alt="img"
       />
       <h5 className="product-title">{product?.title}</h5>
-      <p className="product-price">€ {product.price}</p>
+      <p className="product-price">€ {product?.price}</p>
       <p className="product-category">
-        <span>Category:</span> {product.category}
+        <span>Category:</span> {product?.category}
       </p>
       <button className="btn">Add Basket</button>
     </div>

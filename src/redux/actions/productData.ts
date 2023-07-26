@@ -1,13 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { Dispatch } from "redux";
 import { PRODUCT_DATA_ACTION } from "../constants/ActionTypes";
-
-interface ProductData {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-}
+import { ProductData } from "../../Types/Type";
 
 interface GetProductDataAction {
   type: typeof PRODUCT_DATA_ACTION;

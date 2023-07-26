@@ -1,13 +1,7 @@
 import { PRODUCT_DATA_ACTION } from "../constants/ActionTypes";
+import { ProductData } from "../../Types/Type";
 
-export interface ProductData {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-}
-
-interface ProductDataState {
+export interface ProductDataState {
   productData: ProductData[];
 }
 
