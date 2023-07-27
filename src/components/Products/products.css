@@ -6,7 +6,7 @@
   height: 25rem;
   border-radius: 4rem;
   margin: 1rem;
-  border: 3px solid;
+  border: 2px solid #a99d58;
 }
 
 .product-image {
@@ -41,11 +41,11 @@
   border-radius: 2rem;
   border: none;
   cursor: pointer;
-  background-color: #0eadb5;
+  background-color: #a99d58;
   color: #000;
 }
 
 .btn:hover {
   background-color: #000;
-  color: #0eadb5;
+  color: #a99d58;
 }

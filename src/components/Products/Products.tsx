@@ -21,7 +21,12 @@ export const Products: React.FC<ProductsProps> = ({
       <p className="product-category">
         <span>Category:</span> {product?.category}
       </p>
-      <button className="btn">Add Basket</button>
+      <button
+        onClick={() => (window.location.href = `info/${product.id}`)}
+        className="btn"
+      >
+        Review
+      </button>
     </div>
   );
 };

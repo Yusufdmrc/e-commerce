@@ -5,6 +5,9 @@ export interface ProductData {
   description: string;
   category: string;
   image: string;
+  rate: number;
+  count: number;
+  amount: number;
 }
 
 export interface ProductInfo {
@@ -16,4 +19,5 @@ export interface ProductInfo {
   image: string;
   rate: number;
   count: number;
+  amount: number;
 }

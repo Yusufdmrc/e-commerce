@@ -1,6 +1,6 @@
 .basket-container {
   position: fixed;
-  width: 30%;
+  width: 50%;
   height: 75%;
   top: 0;
   right: 0;
@@ -12,6 +12,10 @@
   background-color: #fff;
 }
 
+.basket-container .icon {
+  color: #a99d58;
+}
+
 .basket-header {
   height: 4rem;
   display: flex;
@@ -19,6 +23,34 @@
   justify-content: space-between;
 }
 
+.basket-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2rem;
+  padding-bottom: 1rem;
+  height: 7rem;
+}
+
+.basket-image {
+  height: 4rem;
+}
 .basket-title {
-  font-size: 2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #a99d58;
+}
+
+.basket-count {
+  font-weight: bold;
+  color: #a99d58;
+}
+
+.basket-price {
+  font-weight: bold;
+  color: #a99d58;
+}
+
+.basket-btn {
+  width: 10%;
 }

@@ -1,10 +1,22 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./basket.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { DRAWER_ACTION } from "../../redux/constants/ActionTypes";
+import { RootState } from "../../redux/store";
+import { ProductInfo } from "../../Types/Type";
+import { removeBasket } from "../../redux/actions/basket";
+import { ThunkDispatch } from "redux-thunk";
+import { AnyAction } from "redux";
 
 const Basket = () => {
-  const dispatch = useDispatch();
+  const { basketItems } = useSelector((state: RootState) => state.basket);
+  console.log(basketItems);
+  const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+
+  const deleteBasket = (id: number) => {
+    dispatch(removeBasket(id));
+  };
+
   return (
     <div className="basket-container">
       <div className="basket-header">
@@ -15,6 +27,21 @@ const Basket = () => {
           size={30}
         />
       </div>
+
+      {basketItems?.map((basket: ProductInfo) => (
+        <div key={basket.id} className="basket-content">
+          <img className="basket-image" src={basket.image} alt="basket-image" />
+          <div className="basket-title">{basket.title.substring(0, 17)}</div>
+          <div className="basket-count">{basket.amount}</div>
+          <div className="basket-price">€{basket.price * basket.amount}</div>
+          <button
+            onClick={() => deleteBasket(basket.id)}
+            className="basket-btn btn"
+          >
+            DELETE
+          </button>
+        </div>
+      ))}
     </div>
   );
 };
