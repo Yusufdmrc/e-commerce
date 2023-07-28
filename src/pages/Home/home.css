@@ -1,5 +1,53 @@
-.product-container {
+.home-container {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(120deg, #b6adc3, #a695bb);
+  padding: 0 3rem;
+}
+
+.home-title {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.home-slogan {
+  color: #444;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1.6rem;
+}
+
+.home-desc {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.home-btn {
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  background-color: #a18eba;
+}
+
+.home-right img {
+  object-fit: cover;
+  width: 28rem;
+  border-radius: 2rem;
+}
+
+.home-top {
+  font-size: 1.25rem;
+  background-color: #e2dde9;
+  padding: 1.25rem;
+  text-align: center;
+  border-top: 0.0625rem solid #dee0ea;
+  position: relative;
 }

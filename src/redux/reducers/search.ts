@@ -1,13 +1,13 @@
 import { SEARCH_ACTION } from "../constants/ActionTypes";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 
 interface SearchState {
-  search: ProductInfo[];
+  search: ProductData[];
 }
 
 interface SearchAction {
   type: typeof SEARCH_ACTION;
-  payload: ProductInfo[];
+  payload: ProductData[];
 }
 
 type SearchActionTypes = SearchAction;

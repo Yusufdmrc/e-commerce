@@ -1,5 +1,5 @@
 import "./products.css";
-import { ProductData } from "../../redux/reducers/productData";
+import { ProductData } from "../../Types/Type";
 
 interface ProductsProps {
   product: ProductData;

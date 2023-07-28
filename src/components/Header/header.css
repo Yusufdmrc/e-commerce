@@ -1,7 +1,7 @@
 .navbar-top {
   font-size: 1.25rem;
   color: #fff;
-  background-color: #a99d58;
+  background-color: #b6adc3;
   padding: 1.25rem;
   text-align: center;
   border-top: 0.0625rem solid #dee0ea;
@@ -30,7 +30,7 @@
 }
 
 .navbar-input {
-  border: 0.125rem solid #a99d58;
+  border: 0.125rem solid #b6adc3;
   outline: none;
   border-radius: 1.25rem;
   padding: 0.625rem;
@@ -46,7 +46,7 @@
 }
 
 .basket-quantity {
-  background-color: #a99d58;
+  background-color: #b6adc3;
   color: #fff;
   font-size: 1rem;
   padding: 0.125rem;

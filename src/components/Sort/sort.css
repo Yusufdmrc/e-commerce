@@ -1,0 +1,14 @@
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #b6adc3;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.sort-select {
+  padding: 0.3rem;
+  background-color: #dad9dc;
+}

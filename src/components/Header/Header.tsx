@@ -15,11 +15,11 @@ const Navbar: React.FC = () => {
     const root = document.getElementById("root");
     if (root) {
       if (mode) {
-        root.style.backgroundColor = "#1d2020";
+        root.style.backgroundColor = "#2a2f2f";
         root.style.color = "#fff";
       } else {
         root.style.backgroundColor = "#fff";
-        root.style.color = "#1d2020";
+        root.style.color = "#2a2f2f";
       }
     }
   }, [mode]);

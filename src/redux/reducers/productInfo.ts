@@ -1,13 +1,13 @@
 import { PRODUCT_INFO_ACTION } from "../constants/ActionTypes";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 
 export interface ProductInfoState {
-  productInfo: ProductInfo | null;
+  productInfo: ProductData | null;
 }
 
 interface ProductInfoActionTypes {
   type: typeof PRODUCT_INFO_ACTION;
-  payload: ProductInfo | null;
+  payload: ProductData | null;
 }
 
 const initialState: ProductInfoState = {

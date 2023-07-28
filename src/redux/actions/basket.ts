@@ -4,18 +4,18 @@ import {
   ADD_BASKET_ACTION,
   REMOVE_BASKET_ACTION,
 } from "../constants/ActionTypes";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 import { RootState } from "../store";
 
 interface BasketAction {
   type: typeof ADD_BASKET_ACTION;
-  payload: ProductInfo;
+  payload: ProductData;
 }
 
 export const basketAction =
   (id: number, amount: number) =>
   async (dispatch: Dispatch<BasketAction>, getState: () => RootState) => {
-    const response: AxiosResponse<ProductInfo> = await axios.get(
+    const response: AxiosResponse<ProductData> = await axios.get(
       `https://fakestoreapi.com/products/${id}`
     );
 

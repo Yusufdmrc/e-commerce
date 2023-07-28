@@ -1,34 +1,32 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { productDataAction } from "../../redux/actions/productData";
-import { RootState } from "../../redux/store";
-import { Products } from "../../components/Products/Products";
+import { Link } from "react-router-dom";
 import "./home.css";
-import { searchAction } from "../../redux/actions/search";
-import { ProductData, ProductInfo } from "../../Types/Type";
+import homeImg from "../../assets/img/e-commerce.jpg";
 
-const Home = () => {
-  const dispatch = useDispatch();
-  const { productData } = useSelector((state: RootState) => state.productData);
-  const { search } = useSelector((state: RootState) => state.search);
-
-  useEffect(() => {
-    dispatch(productDataAction());
-    dispatch(searchAction());
-  }, [dispatch]);
-  console.log(productData);
-
+const Home: React.FC = () => {
   return (
-    <div className="product-container">
-      {search.length > 0
-        ? search.map((product: ProductData) => (
-            <Products product={product} key={product.id} />
-          ))
-        : productData &&
-          productData.map((product: ProductData) => (
-            <Products product={product} key={product.id} />
-          ))}
-    </div>
+    <>
+      <div className="home-top">
+        <a href="/">E-Commerce</a>
+      </div>
+      <section className="home-container">
+        <div className="home left">
+          <h3 className="home-title">Discover Your Style, Express Yourself</h3>
+          <h1 className="home-slogan">
+            Experience the Passion for Fashion, Reflect Your Style
+          </h1>
+          <p className="home-desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
+            ducimus aut numquam architecto facere officia.
+          </p>
+          <button className="home-btn ">
+            <Link to="/shop">Explore Now</Link>
+          </button>
+        </div>
+        <div className="home-right">
+          <img src={homeImg} alt="home-img" />
+        </div>
+      </section>
+    </>
   );
 };
 

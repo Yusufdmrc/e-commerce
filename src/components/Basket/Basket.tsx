@@ -3,7 +3,7 @@ import "./basket.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { DRAWER_ACTION } from "../../redux/constants/ActionTypes";
 import { RootState } from "../../redux/store";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 import { removeBasket } from "../../redux/actions/basket";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
@@ -20,7 +20,7 @@ const Basket = () => {
   return (
     <div className="basket-container">
       <div className="basket-header">
-        <h1 className="basket-title">My Basket</h1>
+        <h1 className="basket-title">Basket</h1>
         <AiOutlineCloseCircle
           onClick={() => dispatch({ type: DRAWER_ACTION, payload: false })}
           className="icon"
@@ -28,7 +28,7 @@ const Basket = () => {
         />
       </div>
 
-      {basketItems?.map((basket: ProductInfo) => (
+      {basketItems?.map((basket: ProductData) => (
         <div key={basket.id} className="basket-content">
           <img className="basket-image" src={basket.image} alt="basket-image" />
           <div className="basket-title">{basket.title.substring(0, 17)}</div>

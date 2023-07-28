@@ -2,15 +2,15 @@ import {
   ADD_BASKET_ACTION,
   REMOVE_BASKET_ACTION,
 } from "../constants/ActionTypes";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 
 interface BasketState {
-  basketItems: ProductInfo[];
+  basketItems: ProductData[];
 }
 
 interface AddBasketAction {
   type: typeof ADD_BASKET_ACTION;
-  payload: ProductInfo;
+  payload: ProductData;
 }
 
 interface RemoveBasketAction {

@@ -4,3 +4,4 @@ export const PRODUCT_INFO_ACTION = "GET_INFO";
 export const ADD_BASKET_ACTION = "ADD_BASKET";
 export const REMOVE_BASKET_ACTION = "REMOVE_BASKET";
 export const SEARCH_ACTION = "SEARCH";
+export const CATEGORY_ACTION = "CATEGORY";

@@ -1,0 +1,27 @@
+.category-container {
+  width: 15%;
+  background-color: #b6adc3;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  margin: auto;
+}
+
+.category {
+  border-bottom: 1px solid;
+  font-weight: bold;
+  padding-bottom: 0.3rem;
+  text-align: center;
+}
+
+.categories {
+  cursor: pointer;
+  margin: 0.5rem;
+  border: 1px solid;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.categories:hover {
+  background-color: #000;
+  color: #b6adc3;
+}

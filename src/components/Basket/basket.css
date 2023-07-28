@@ -13,7 +13,7 @@
 }
 
 .basket-container .icon {
-  color: #a99d58;
+  color: #b6adc3;
 }
 
 .basket-header {
@@ -38,17 +38,17 @@
 .basket-title {
   font-size: 0.8rem;
   font-weight: bold;
-  color: #a99d58;
+  color: #b6adc3;
 }
 
 .basket-count {
   font-weight: bold;
-  color: #a99d58;
+  color: #b6adc3;
 }
 
 .basket-price {
   font-weight: bold;
-  color: #a99d58;
+  color: #b6adc3;
 }
 
 .basket-btn {

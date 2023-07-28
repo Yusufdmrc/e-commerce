@@ -1,0 +1,23 @@
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paginate {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.paginate li {
+  margin: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  cursor: pointer;
+}

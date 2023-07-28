@@ -1,22 +1,22 @@
 import { Dispatch } from "redux";
 import { SEARCH_ACTION } from "../constants/ActionTypes";
-import { ProductInfo } from "../../Types/Type";
+import { ProductData } from "../../Types/Type";
 
 interface SearchAction {
   type: typeof SEARCH_ACTION;
-  payload: ProductInfo[];
+  payload: ProductData[];
 }
 
 export const searchAction =
-  (keyword: string) => async (dispatch: Dispatch<SearchAction>) => {
+  (key: string) => async (dispatch: Dispatch<SearchAction>) => {
     const response = await fetch("https://fakestoreapi.com/products");
-    const data: ProductInfo[] = await response.json();
+    const data: ProductData[] = await response.json();
 
     const filteredData = data.filter(
       (item) =>
-        item.title.includes(keyword) ||
-        item.description.includes(keyword) ||
-        item.category.includes(keyword)
+        item.title.includes(key) ||
+        item.description.includes(key) ||
+        item.category.includes(key)
     );
 
     dispatch({
