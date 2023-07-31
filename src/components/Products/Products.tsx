@@ -1,6 +1,8 @@
 import "./products.css";
 import { ProductData } from "../../Types/Type";
 
+// import { AiFillHeart } from "react-icons/ai";
+
 interface ProductsProps {
   product: ProductData;
 }
@@ -10,10 +12,13 @@ export const Products: React.FC<ProductsProps> = ({
 }: ProductsProps) => {
   return (
     <div className="product">
+      {/* <div className="product-icon">
+        <AiFillHeart />
+      </div> */}
       <img
         onClick={() => (window.location.href = `info/${product.id}`)}
         className="product-image"
-        src={product?.image}
+        src={product.image}
         alt="img"
       />
       <h5 className="product-title">{product?.title}</h5>

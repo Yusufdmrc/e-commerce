@@ -10,68 +10,88 @@ import Header from "../../components/Header/Header";
 import Sort from "../../components/Sort/Sort";
 import Category from "../../components/Category/Category";
 import ReactPaginate from "react-paginate";
+import { getCategoryAction } from "../../redux/actions/category";
 
-const Home = () => {
+const Shop = () => {
   const dispatch = useDispatch();
-  const { productData } = useSelector((state: RootState) => state.productData);
+  const { search } = useSelector((state: RootState) => state.search);
+  const [sort, setSort] = useState<string>("");
+  const [category, setCategory] = useState<string | null>(null);
 
+  console.log(sort);
+  const { productData } = useSelector((state: RootState) => state.productData);
   const [itemOffset, setItemOffset] = useState(0);
+
+  const sortedProductData = productData
+    ?.slice() // Diziyi kopyalayarak orijinali değiştirmeyin
+    .sort((a, b) =>
+      sort === "increasing"
+        ? a.price - b.price
+        : sort === "decreasing"
+        ? b.price - a.price
+        : 0
+    );
 
   const itemsPerPage = 8;
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = productData.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(productData.length / itemsPerPage);
+  const currentItems = sortedProductData.slice(itemOffset, endOffset);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % productData.length;
+    const newOffset =
+      (event.selected * itemsPerPage) % (sortedProductData?.length || 0);
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
     setItemOffset(newOffset);
   };
-
-  const { search } = useSelector((state: RootState) => state.search);
-  const [sort, setSort] = useState<string>("");
-  const [category, setCategory] = useState<string>("");
+  const pageCount = Math.ceil(productData.length / itemsPerPage);
 
   useEffect(() => {
-    dispatch(productDataAction());
-    dispatch(searchAction());
-  }, [dispatch]);
+    if (category) {
+      dispatch(getCategoryAction(category));
+    } else {
+      dispatch(productDataAction());
+      dispatch(searchAction());
+    }
+  }, [dispatch, category]);
+
   console.log(productData);
 
   return (
     <>
       <Header />
-      <Sort />
       <div className="product-category">
-        <Category />
-        <>
+        <div className="category-sort">
+          <Sort setSort={setSort} />
+        </div>
+        <div className="aa">
+          <div className="category">
+            <Category setCategory={setCategory} products={productData} />
+          </div>
           <section className="product-container">
             {search.length > 0
               ? search.map((product: ProductData) => (
                   <Products product={product} key={product.id} />
                 ))
-              : productData &&
-                currentItems.map((product: ProductData) => (
+              : currentItems.map((product: ProductData) => (
                   <Products product={product} key={product.id} />
                 ))}
           </section>
-          <ReactPaginate
-            className="paginate"
-            breakLabel="..."
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel="<"
-            renderOnZeroPageCount={null}
-          />
-        </>
+        </div>
+        <ReactPaginate
+          className="paginate"
+          breakLabel="..."
+          nextLabel="-->"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="<--"
+          renderOnZeroPageCount={null}
+        />
       </div>
     </>
   );
 };
 
-export default Home;
+export default Shop;

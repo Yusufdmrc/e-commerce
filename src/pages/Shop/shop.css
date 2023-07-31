@@ -6,9 +6,9 @@
 
 .paginate {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .paginate li {
@@ -20,4 +20,13 @@
   align-items: center;
   border: 1px solid;
   cursor: pointer;
+}
+
+.category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }

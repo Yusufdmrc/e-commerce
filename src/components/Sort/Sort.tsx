@@ -1,18 +1,12 @@
 import "./sort.css";
 
-const Sort = () => {
+const Sort = ({ setSort }) => {
   return (
     <div className="sort-container">
-      <select className="sort-select">
-        <option disabled value="">
-          Select
-        </option>
-        <option disabled value="increasing">
-          Lowest price
-        </option>
-        <option disabled value="decreasing">
-          Highest price
-        </option>
+      <select onChange={(e) => setSort(e.target.value)} className="sort-select">
+        <option value="">Select</option>
+        <option value="increasing">Lowest price</option>
+        <option value="decreasing">Highest price</option>
       </select>
     </div>
   );

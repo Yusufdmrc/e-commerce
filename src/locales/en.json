@@ -1,0 +1,34 @@
+{
+  "header": {
+    "home": "Home",
+    "basket": "Basket",
+    "searchPlaceholder": "Search..."
+  },
+  "home": {
+    "title": "Discover Your Style, Express Yourself",
+    "slogan": "Experience the Passion for Fashion, Reflect Your Style",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ducimus aut numquam architecto facere officia.",
+    "explore": "Explore Now",
+    "top": "E-commerce"
+  },
+  "category": {
+    "title": "CATEGORY"
+  },
+  "sort": {
+    "select": "Select",
+    "lowestPrice": "Lowest price",
+    "highestPrice": "Highest price"
+  },
+  "basket": {
+    "title": "Basket",
+    "close": "Close",
+    "delete": "DELETE"
+  },
+  "info": {
+    "count": "Count",
+    "addToBasket": "Add To Basket",
+    "productFeatures": "Product Features",
+    "category": "Category",
+    "rating": "Rating(5)"
+  }
+}

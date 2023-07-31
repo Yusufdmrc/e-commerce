@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import { SEARCH_ACTION } from "../constants/ActionTypes";
 import { ProductData } from "../../Types/Type";
 
-interface SearchAction {
+export interface SearchAction {
   type: typeof SEARCH_ACTION;
   payload: ProductData[];
 }

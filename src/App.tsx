@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 import Info from "./pages/Info/Info";
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Basket from "./components/Basket/Basket";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
+import "./i18n.js";
 
 function App() {
   const { drawer } = useSelector((state: RootState) => state.drawer);

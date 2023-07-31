@@ -50,4 +50,17 @@
   text-align: center;
   border-top: 0.0625rem solid #dee0ea;
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.home-lang {
+  display: flex;
+  column-gap: 0.5rem;
+  margin-left: 70rem;
+  cursor: pointer;
+}
+
+.home-login {
+  margin-top: 0.2rem;
 }

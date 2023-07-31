@@ -1,0 +1,34 @@
+{
+  "header": {
+    "home": "Anasayfa",
+    "basket": "Sepet",
+    "searchPlaceholder": "Ara..."
+  },
+  "home": {
+    "title": "Tarzını Keşfet, Kendini Yansıt",
+    "slogan": "Moda Tutkusunu Yaşa, Tarzını Yansıt",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ducimus aut numquam architecto facere officia.",
+    "explore": "Keşfet",
+    "top": "E-ticaret"
+  },
+  "category": {
+    "title": "KATEGORİ"
+  },
+  "sort": {
+    "select": "Seçiniz",
+    "lowestPrice": "En düşük fiyat",
+    "highestPrice": "En yüksek fiyat"
+  },
+  "basket": {
+    "title": "Sepet",
+    "close": "Kapat",
+    "delete": "SİL"
+  },
+  "info": {
+    "count": "Adet",
+    "addToBasket": "Sepete Ekle",
+    "productFeatures": "Ürün Özellikleri",
+    "category": "Kategori",
+    "rating": "Puan(5)"
+  }
+}

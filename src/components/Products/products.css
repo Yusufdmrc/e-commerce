@@ -7,6 +7,7 @@
   border-radius: 4rem;
   margin: 1rem;
   border: 2px solid #b6adc3;
+  position: relative;
 }
 
 .product-image {
@@ -48,4 +49,16 @@
 .btn:hover {
   background-color: #000;
   color: #b6adc3;
+}
+
+.product-icon {
+  position: absolute;
+  top: 1rem;
+  left: 14rem;
+  cursor: pointer;
+  color: #b6adc3;
+}
+
+.product-iconn {
+  color: red;
 }

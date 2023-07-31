@@ -5,7 +5,7 @@ export interface ProductData {
   description: string;
   category: string;
   image: string;
-  rating: [];
+  rating: number[];
   rate: number;
   count: number;
   amount: number;

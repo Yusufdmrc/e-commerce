@@ -1,4 +1,5 @@
 import thunk from "redux-thunk";
+import { CategoryState, categoryReducer } from "./reducers/category";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import { drawerReducer, DrawerState } from "./reducers/drawer";
@@ -7,7 +8,6 @@ import { productInfoReducer, ProductInfoState } from "./reducers/productInfo";
 import { basketReducer } from "./reducers/basket";
 import { searchReducer } from "./reducers/search";
 import { ProductData } from "../Types/Type";
-import { CategoryState, categoryReducer } from "./reducers/category";
 
 interface BasketState {
   basketItems: ProductData[];
@@ -31,7 +31,10 @@ const basketItems: ProductData[] = storedBasketItems
   ? JSON.parse(storedBasketItems)
   : [];
 
-const initialState = { basket: { basketItems } };
+const initialState = {
+  basket: { basketItems },
+  category: { categories: null },
+};
 
 const reducers = combineReducers({
   drawer: drawerReducer,

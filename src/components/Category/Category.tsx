@@ -4,7 +4,11 @@ import { useEffect } from "react";
 import { categoryAction } from "../../redux/actions/category";
 import { RootState } from "../../redux/store";
 
-const Category: React.FC = () => {
+interface CategoryProps {
+  setCategory: (category: string | null) => void;
+}
+
+const Category: React.FC<CategoryProps> = ({ setCategory, products }) => {
   const dispatch = useDispatch();
   const { category } = useSelector((state: RootState) => state.category);
   console.log(category);
@@ -16,11 +20,21 @@ const Category: React.FC = () => {
   return (
     <div className="category-container">
       <div className="category">CATEGORY</div>
-      {category?.map((category: string[], index: number) => (
-        <div key={index} className="categories">
-          {category}
-        </div>
-      ))}
+      {category && category.length > 0 ? (
+        category.map((categoryName: string, index: number) => (
+          <div
+            onClick={() => {
+              setCategory(categoryName);
+            }}
+            key={index}
+            className="categories"
+          >
+            {categoryName}
+          </div>
+        ))
+      ) : (
+        <div>s</div>
+      )}
     </div>
   );
 };

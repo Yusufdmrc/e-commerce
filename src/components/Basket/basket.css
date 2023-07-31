@@ -1,7 +1,7 @@
 .basket-container {
   position: fixed;
-  width: 50%;
-  height: 75%;
+  width: 100%;
+  height: 90%;
   top: 0;
   right: 0;
   padding: 1rem;
@@ -53,4 +53,22 @@
 
 .basket-btn {
   width: 10%;
+}
+
+.total-price {
+  border: 2px solid #b6adc3;
+  width: 10rem;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  margin-left: 55rem;
+  background-color: #b6adc3;
+}
+
+.total-price p {
+  text-align: center;
+}
+
+.total-price:hover {
+  background-color: #000000;
+  color: #b6adc3;
 }

@@ -11,7 +11,7 @@ interface CategoryActionTypes {
 }
 
 const initialState: CategoryState = {
-  category: [],
+  category: null,
 };
 
 export const categoryReducer = (

@@ -17,6 +17,14 @@ const Basket = () => {
     dispatch(removeBasket(id));
   };
 
+  const getTotalPrice = () => {
+    let totalPrice = 0;
+    basketItems.forEach((item) => {
+      totalPrice += item.price * item.amount;
+    });
+    return totalPrice;
+  };
+
   return (
     <div className="basket-container">
       <div className="basket-header">
@@ -42,6 +50,9 @@ const Basket = () => {
           </button>
         </div>
       ))}
+      <div className="total-price">
+        <p>Total Price: €{Math.floor(getTotalPrice())}</p>
+      </div>
     </div>
   );
 };

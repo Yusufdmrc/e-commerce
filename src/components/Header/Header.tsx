@@ -4,12 +4,15 @@ import { BsSun, BsBasket3Fill, BsMoon } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { DRAWER_ACTION } from "../../redux/constants/ActionTypes";
 import { searchAction } from "../../redux/actions/search";
+import { useTranslation } from "react-i18next";
 
 const Navbar: React.FC = () => {
   const [mode, setMode] = useState(false);
   const dispatch = useDispatch();
   const [search, setSearch] = useState<string>("");
   const { basketItems } = useSelector((state: RootState) => state.basket);
+
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const root = document.getElementById("root");
@@ -30,14 +33,20 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <header>
       <div className="navbar-top">
-        <a href="/">E-Commerce</a>
+        <a href="/">{t("header.home")}</a>
       </div>
       <div className="navbar">
         <div className="navbar-left">
-          <p className="icon">E-Commerce</p>
+          <a href="/shop" className="icon">
+            E-Commerce
+          </a>
         </div>
         <div className="navbar-center">
           <input
