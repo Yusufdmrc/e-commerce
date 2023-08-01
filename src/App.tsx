@@ -19,6 +19,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/info/:id" element={<Info />} />
+          <Route path="/auth" />
         </Routes>
         {drawer && <Basket />}
         <Footer />

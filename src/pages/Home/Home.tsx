@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "./home.css";
 import homeImg from "../../assets/img/e-commerce.jpg";
 import { useTranslation } from "react-i18next";
+import { FiLogIn } from "react-icons/fi";
+import { BiLogOut } from "react-icons/bi";
+
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
 
@@ -17,6 +20,14 @@ const Home: React.FC = () => {
         </div>
 
         <div className="home-lang">
+          <div className="home-auth">
+            <div className="left">
+              <FiLogIn />
+            </div>
+            <div className="right">
+              <BiLogOut />
+            </div>
+          </div>
           <div onClick={() => changeLanguage("en")}>
             <span role="img" aria-label="english-flag">
               🇺🇸

@@ -14,7 +14,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // Başlangıçta varsayılan olarak İngilizce dilini kullanıyoruz
+  lng: "en",
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,

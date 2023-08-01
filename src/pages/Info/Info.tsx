@@ -24,6 +24,7 @@ const Info = () => {
   const addBasket = () => {
     dispatch(basketAction(id, count));
     dispatch({ type: "DRAWER_ACTION", payload: true });
+    setCount(0);
   };
 
   const increment = (stock: number) => {
