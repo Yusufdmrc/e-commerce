@@ -17,19 +17,19 @@ const Basket = () => {
   const { basketItems } = useSelector((state: RootState) => state.basket);
   console.log(basketItems);
   const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
-  const [counters, setCounters] = useState<{ [id: number]: number }>({});
+  const [itemCounts, setItemCounts] = useState({});
 
-  const incrementCounter = (id: number) => {
-    setCounters((prevCounters) => ({
-      ...prevCounters,
-      [id]: (prevCounters[id] || 0) + 1,
+  const increaseItemCount = (id: number) => {
+    setItemCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 0) + 1,
     }));
   };
 
-  const decrementCounter = (id: number) => {
-    setCounters((prevCounters) => ({
-      ...prevCounters,
-      [id]: Math.max((prevCounters[id] || 0) - 1, 0),
+  const decreaseItemCount = (id: number) => {
+    setItemCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: Math.max((prevCounts[id] || 0) - 1, 0),
     }));
   };
 
@@ -40,7 +40,7 @@ const Basket = () => {
   const getTotalPrice = () => {
     let totalPrice = 0;
     basketItems.forEach((item) => {
-      totalPrice += item.price * item.amount;
+      totalPrice += (itemCounts[item.id] || 0) * item.price;
     });
     return totalPrice;
   };
@@ -63,20 +63,20 @@ const Basket = () => {
 
           <div className="counter-container">
             <AiFillMinusCircle
-              className="counter-icon"
-              onClick={() => decrementCounter(basket.id)}
-              size={18}
+              onClick={() => decreaseItemCount(basket.id)}
+              className="meter-icon"
+              size={20}
             />
-            <span className="counter-value">{counters[basket.id] || 0}</span>
+            <span className="counter-value">{itemCounts[basket.id] || 0}</span>
             <AiFillPlusCircle
-              className="counter-icon"
-              onClick={() => incrementCounter(basket.id)}
-              size={18}
+              onClick={() => increaseItemCount(basket.id)}
+              className="meter-icon"
+              size={20}
             />
           </div>
 
           <div className="basket-price">
-            €{Math.floor(basket.price * basket.amount)}
+            €{Math.floor((itemCounts[basket.id] || 0) * basket.price)}
           </div>
 
           <button

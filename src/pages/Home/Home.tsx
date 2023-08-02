@@ -4,6 +4,8 @@ import homeImg from "../../assets/img/e-commerce.jpg";
 import { useTranslation } from "react-i18next";
 import { FiLogIn } from "react-icons/fi";
 import { BiLogOut } from "react-icons/bi";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -22,10 +24,7 @@ const Home: React.FC = () => {
         <div className="home-lang">
           <div className="home-auth">
             <div className="left">
-              <FiLogIn />
-            </div>
-            <div className="right">
-              <BiLogOut />
+              <FiLogIn onClick={() => (window.location.href = `auth/`)} />
             </div>
           </div>
           <div onClick={() => changeLanguage("en")}>

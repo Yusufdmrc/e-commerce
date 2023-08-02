@@ -38,25 +38,6 @@
   font-weight: bold;
 }
 
-.product-meter {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin: 1rem 0;
-  width: 10%;
-  background-color: transparent;
-}
-
-.product-meter .meter-icon {
-  cursor: pointer;
-  color: #b6adc3;
-}
-
-.product-meter:hover {
-  background-color: #fff;
-  color: #000;
-}
-
 .add-btn {
   margin-top: 1.5rem;
 }

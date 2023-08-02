@@ -9,7 +9,6 @@ import { basketAction } from "../../redux/actions/basket";
 import Header from "../../components/Header/Header";
 
 const Info = () => {
-  const [count, setCount] = useState<number>(0);
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
   const { productInfo } = useSelector((state: RootState) => state.productInfo);
@@ -22,21 +21,9 @@ const Info = () => {
   console.log(productInfo);
 
   const addBasket = () => {
-    dispatch(basketAction(id, count));
+    dispatch(basketAction(id));
     dispatch({ type: "DRAWER_ACTION", payload: true });
     setCount(0);
-  };
-
-  const increment = (stock: number) => {
-    if (count < stock) {
-      setCount(count + 1);
-    }
-  };
-
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
   };
 
   return (
@@ -50,19 +37,7 @@ const Info = () => {
           <div className="product-info">
             <h3 className="product-title">{productInfo?.title}</h3>
             <h5 className="product-price">€ {productInfo?.price}</h5>
-            <div className="product-meter">
-              <AiFillMinusCircle
-                onClick={decrement}
-                size={25}
-                className="meter-icon"
-              />
-              <span>{count}</span>
-              <AiFillPlusCircle
-                onClick={() => increment(productInfo?.rating?.count)}
-                size={25}
-                className="meter-icon"
-              />
-            </div>
+
             <p className="product-count">
               <span>Count:</span>
               {productInfo?.rating?.count}

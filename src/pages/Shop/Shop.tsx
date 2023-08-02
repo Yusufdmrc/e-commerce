@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productDataAction } from "../../redux/actions/productData";
 import { RootState } from "../../redux/store";
@@ -11,7 +11,7 @@ import Sort from "../../components/Sort/Sort";
 import Category from "../../components/Category/Category";
 import ReactPaginate from "react-paginate";
 
-const Shop = () => {
+const Shop: React.FC<{ users: { email: string } }> = ({ users }) => {
   const dispatch = useDispatch();
   const { search } = useSelector((state: RootState) => state.search);
   const [sort, setSort] = useState<string>("");
@@ -21,7 +21,15 @@ const Shop = () => {
   const { productData } = useSelector((state: RootState) => state.productData);
   const [itemOffset, setItemOffset] = useState(0);
 
-  const sortedProductData = productData
+  const itemsPerPage = 8;
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+
+  const filteredProductData = category
+    ? productData?.filter((product) => product.category === category)
+    : productData;
+
+  const sortedProductData = filteredProductData
     ?.slice()
     .sort((a, b) =>
       sort === "increasing"
@@ -31,17 +39,9 @@ const Shop = () => {
         : 0
     );
 
-  const itemsPerPage = 8;
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = sortedProductData?.slice(itemOffset, endOffset);
 
-  const filteredProductData = category
-    ? productData?.filter((product) => product.category === category)
-    : productData;
-
-  const currentItems = filteredProductData?.slice(itemOffset, endOffset);
-
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: { selected: number }) => {
     const newOffset =
       (event.selected * itemsPerPage) % (sortedProductData?.length || 0);
     console.log(
@@ -49,7 +49,7 @@ const Shop = () => {
     );
     setItemOffset(newOffset);
   };
-  const pageCount = Math.ceil(productData.length / itemsPerPage);
+  const pageCount = Math.ceil(filteredProductData?.length / itemsPerPage) || 1;
 
   useEffect(() => {
     if (category) {
@@ -62,9 +62,17 @@ const Shop = () => {
 
   console.log(productData);
 
+  const logout = async () => {
+    await signOut(auth);
+    window.location = "/auth";
+  };
+
   return (
     <>
       <Header />
+      {/* <div>
+        Welcome <span>{users?.email}</span>
+      </div> */}
       <div className="product-category">
         <div className="category-sort">
           <Sort setSort={setSort} />

@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { DRAWER_ACTION } from "../../redux/constants/ActionTypes";
 import { searchAction } from "../../redux/actions/search";
 import { useTranslation } from "react-i18next";
+import { BiLogOut } from "react-icons/bi";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { auth } from "../../firebase";
 
 const Navbar: React.FC = () => {
   const [mode, setMode] = useState(false);
@@ -33,8 +37,12 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+  const logout = async () => {
+    toast.success("Exiting...");
+    await signOut(auth);
+    setTimeout(() => {
+      window.location = "/auth";
+    }, 2000);
   };
 
   return (
@@ -58,6 +66,7 @@ const Navbar: React.FC = () => {
             className="navbar-input"
           />
         </div>
+
         <div className="navbar-right">
           <div
             onClick={() => dispatch({ type: DRAWER_ACTION, payload: true })}
@@ -72,6 +81,9 @@ const Navbar: React.FC = () => {
             ) : (
               <BsSun className="icon" size={22} />
             )}
+          </div>
+          <div onClick={logout} className="logout">
+            <BiLogOut size={22} />
           </div>
         </div>
       </div>

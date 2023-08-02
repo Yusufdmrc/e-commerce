@@ -55,3 +55,7 @@
   top: -0.625rem;
   left: 1.375rem;
 }
+
+.logout {
+  cursor: pointer;
+}

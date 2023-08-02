@@ -47,6 +47,7 @@ export const basketReducer = (
       return {
         basketItems: state.basketItems.filter((x) => x.id !== action.payload),
       };
+
     default:
       return state;
   }

@@ -72,3 +72,22 @@
   background-color: #000000;
   color: #b6adc3;
 }
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  margin: 1rem 0;
+  width: 10%;
+  background-color: transparent;
+}
+
+.counter-container .meter-icon {
+  cursor: pointer;
+  color: #b6adc3;
+}
+
+.counter-container:hover {
+  background-color: #fff;
+  color: #000;
+}
