@@ -12,13 +12,10 @@ const Info = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
   const { productInfo } = useSelector((state: RootState) => state.productInfo);
-  console.log(id);
 
   useEffect(() => {
     dispatch(productInfoAction(Number(id)));
   }, [dispatch, id]);
-
-  console.log(productInfo);
 
   const addBasket = () => {
     dispatch(basketAction(id));
@@ -37,11 +34,6 @@ const Info = () => {
           <div className="product-info">
             <h3 className="product-title">{productInfo?.title}</h3>
             <h5 className="product-price">€ {productInfo?.price}</h5>
-
-            <p className="product-count">
-              <span>Count:</span>
-              {productInfo?.rating?.count}
-            </p>
             <button onClick={addBasket} className="add-btn btn">
               Add To Basket
             </button>

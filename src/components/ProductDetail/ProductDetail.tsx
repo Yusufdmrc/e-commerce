@@ -1,4 +1,4 @@
-import "./products.css";
+import "./ProductDetail.css";
 import { ProductData } from "../../Types/Type";
 
 // import { AiFillHeart } from "react-icons/ai";
@@ -7,14 +7,11 @@ interface ProductsProps {
   product: ProductData;
 }
 
-export const Products: React.FC<ProductsProps> = ({
+export const ProductDetail: React.FC<ProductsProps> = ({
   product,
 }: ProductsProps) => {
   return (
     <div className="product">
-      {/* <div className="product-icon">
-        <AiFillHeart />
-      </div> */}
       <img
         onClick={() => (window.location.href = `info/${product.id}`)}
         className="product-image"

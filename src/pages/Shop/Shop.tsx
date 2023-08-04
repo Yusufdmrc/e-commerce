@@ -2,28 +2,26 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productDataAction } from "../../redux/actions/productData";
 import { RootState } from "../../redux/store";
-import { Products } from "../../components/Products/Products";
+import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
 import "./shop.css";
 import { searchAction } from "../../redux/actions/search";
 import { ProductData } from "../../Types/Type";
 import Header from "../../components/Header/Header";
 import Sort from "../../components/Sort/Sort";
 import Category from "../../components/Category/Category";
-import ReactPaginate from "react-paginate";
+import Pagination from "../../components/Pagination/Pagination";
+import Gender from "../../components/Gender/Gender";
 
-const Shop: React.FC<{ users: { email: string } }> = ({ users }) => {
+const Shop: React.FC = () => {
   const dispatch = useDispatch();
   const { search } = useSelector((state: RootState) => state.search);
   const [sort, setSort] = useState<string>("");
   const [category, setCategory] = useState<string | null>(null);
 
-  console.log(sort);
   const { productData } = useSelector((state: RootState) => state.productData);
   const [itemOffset, setItemOffset] = useState(0);
-
   const itemsPerPage = 8;
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
 
   const filteredProductData = category
     ? productData?.filter((product) => product.category === category)
@@ -60,48 +58,30 @@ const Shop: React.FC<{ users: { email: string } }> = ({ users }) => {
     }
   }, [dispatch, category]);
 
-  console.log(productData);
-
-  const logout = async () => {
-    await signOut(auth);
-    window.location = "/auth";
-  };
-
   return (
     <>
       <Header />
-      {/* <div>
-        Welcome <span>{users?.email}</span>
-      </div> */}
-      <div className="product-category">
+      <div className="products">
         <div className="category-sort">
+          <Gender setCategory={setCategory} />
+          <Category setCategory={setCategory} />
           <Sort setSort={setSort} />
         </div>
-        <div className="aa">
-          <div className="category">
-            <Category setCategory={setCategory} />
-          </div>
-          <section className="product-container">
-            {search.length > 0
-              ? search.map((product: ProductData) => (
-                  <Products product={product} key={product.id} />
-                ))
-              : currentItems?.map((product: ProductData) => (
-                  <Products product={product} key={product.id} />
-                ))}
-          </section>
-        </div>
-        <ReactPaginate
-          className="paginate"
-          breakLabel="..."
-          nextLabel="-->"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="<--"
-          renderOnZeroPageCount={null}
-        />
+        <section className="product-container">
+          {search.length > 0
+            ? search.map((product: ProductData) => (
+                <ProductDetail product={product} key={product.id} />
+              ))
+            : currentItems?.map((product: ProductData) => (
+                <ProductDetail product={product} key={product.id} />
+              ))}
+        </section>
       </div>
+      <Pagination
+        className="paginate"
+        pageCount={pageCount}
+        onPageChange={handlePageClick}
+      />
     </>
   );
 };

@@ -48,7 +48,7 @@ const Basket = () => {
   return (
     <div className="basket-container">
       <div className="basket-header">
-        <h1 className="basket-title">Basket</h1>
+        <h1 className="basket-title-header">Basket</h1>
         <AiOutlineCloseCircle
           onClick={() => dispatch({ type: DRAWER_ACTION, payload: false })}
           className="icon"
@@ -58,9 +58,14 @@ const Basket = () => {
 
       {basketItems?.map((basket: ProductData) => (
         <div key={basket.id} className="basket-content">
-          <img className="basket-image" src={basket.image} alt="basket-image" />
+          <div className="basket-image-container">
+            <img
+              className="basket-image"
+              src={basket.image}
+              alt="basket-image"
+            />
+          </div>
           <div className="basket-title">{basket.title.substring(0, 17)}</div>
-
           <div className="counter-container">
             <AiFillMinusCircle
               onClick={() => decreaseItemCount(basket.id)}
@@ -78,13 +83,14 @@ const Basket = () => {
           <div className="basket-price">
             €{Math.floor((itemCounts[basket.id] || 0) * basket.price)}
           </div>
-
-          <button
-            onClick={() => deleteBasket(basket.id)}
-            className="basket-btn btn"
-          >
-            DELETE
-          </button>
+          <div className="basket-button">
+            <button
+              onClick={() => deleteBasket(basket.id)}
+              className="basket-btn btn"
+            >
+              DELETE
+            </button>
+          </div>
         </div>
       ))}
       <div className="total-price">

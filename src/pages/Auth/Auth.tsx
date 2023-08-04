@@ -31,7 +31,10 @@ const Auth: React.FC = () => {
         );
         const user = data.user;
         if (user) {
-          window.location = "/shop";
+          toast.success("Registered");
+          setTimeout(() => {
+            window.location = "/shop";
+          }, 1000);
         }
       } catch (error) {
         toast.error(error.message);
@@ -45,7 +48,10 @@ const Auth: React.FC = () => {
         );
         const user = data.user;
         if (user) {
-          window.location = "/shop";
+          toast.success("Logging in...");
+          setTimeout(() => {
+            window.location = "/shop";
+          }, 1000);
         }
       } catch (error) {
         toast.error(error.message);

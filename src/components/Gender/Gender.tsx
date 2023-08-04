@@ -1,34 +1,38 @@
 import { useDispatch, useSelector } from "react-redux";
-import "./category.css";
+import { RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { categoryAction } from "../../redux/actions/category";
-import { RootState } from "../../redux/store";
 import ReactLoading from "react-loading";
+import "./gender.css";
 
 interface CategoryProps {
   setCategory: (category: string | null) => void;
 }
 
-const Category: React.FC<CategoryProps> = ({ setCategory }) => {
+const Gender: React.FC<CategoryProps> = ({ setCategory }) => {
   const dispatch = useDispatch();
   const { category } = useSelector((state: RootState) => state.category);
-  console.log(category);
 
   useEffect(() => {
     dispatch(categoryAction());
   }, [dispatch]);
 
+  const filteredCategories = category?.filter(
+    (categoryName: string) =>
+      categoryName === `men's clothing` || categoryName === `women's clothing`
+  );
+
   return (
     <div>
-      {category && category.length > 0 ? (
+      {filteredCategories && filteredCategories.length > 0 ? (
         <select
           onChange={(e) => setCategory(e.target.value)}
-          className="category-select"
+          className="gender-select"
         >
-          <option value="">Category</option>
-          {category.map((categoryName: string, index: number) => (
+          <option value="">Gender</option>
+          {filteredCategories.map((categoryName: string, index: number) => (
             <option key={index} value={categoryName}>
-              {categoryName}
+              {categoryName === `men's clothing` ? "men" : "women"}
             </option>
           ))}
         </select>
@@ -41,4 +45,4 @@ const Category: React.FC<CategoryProps> = ({ setCategory }) => {
   );
 };
 
-export default Category;
+export default Gender;

@@ -2,17 +2,11 @@ import { Link } from "react-router-dom";
 import "./home.css";
 import homeImg from "../../assets/img/e-commerce.jpg";
 import { useTranslation } from "react-i18next";
-import { FiLogIn } from "react-icons/fi";
-import { BiLogOut } from "react-icons/bi";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+import Language from "../../components/Language/Language";
+import Login from "../../components/Auth/Login";
 
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
 
   return (
     <>
@@ -20,22 +14,12 @@ const Home: React.FC = () => {
         <div className="home-title">
           <a href="/">{t("home.top")}</a>
         </div>
-
-        <div className="home-lang">
-          <div className="home-auth">
-            <div className="left">
-              <FiLogIn onClick={() => (window.location.href = `auth/`)} />
-            </div>
+        <div className="home-auth">
+          <div className="home-login">
+            <Login />
           </div>
-          <div onClick={() => changeLanguage("en")}>
-            <span role="img" aria-label="english-flag">
-              🇺🇸
-            </span>
-          </div>
-          <div onClick={() => changeLanguage("tr")}>
-            <span role="img" aria-label="turkish-flag">
-              🇹🇷
-            </span>
+          <div className="home-lang">
+            <Language />
           </div>
         </div>
       </div>

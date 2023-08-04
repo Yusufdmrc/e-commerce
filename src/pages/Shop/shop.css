@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .paginate {
@@ -22,11 +23,19 @@
   cursor: pointer;
 }
 
-.category {
-  width: 100%;
+.products {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.category-sort {
+  background-color: #b6adc3;
+  border-radius: 2rem;
+  display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  width: 30rem;
+  height: 5rem;
+  column-gap: 0.5rem;
 }
