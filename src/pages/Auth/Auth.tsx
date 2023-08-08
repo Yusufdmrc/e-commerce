@@ -21,7 +21,7 @@ const Auth: React.FC = () => {
     setAuthData({ ...authData, [event.target.name]: event.target.value });
   };
 
-  const authFunc = async () => {
+  const authOperations = async () => {
     if (register) {
       try {
         const data: UserCredential = await createUserWithEmailAndPassword(
@@ -77,13 +77,12 @@ const Auth: React.FC = () => {
           name="password"
           value={authData.password}
         />
-        <div className="auth-google">Login with Google</div>
         <p onClick={() => setRegister(!register)}>
           {register
             ? "Have you registered before"
             : "Would you like to register"}
         </p>
-        <div onClick={authFunc} className="auth-button">
+        <div onClick={authOperations} className="auth-button">
           {register ? "Register" : "Login"}
         </div>
       </div>

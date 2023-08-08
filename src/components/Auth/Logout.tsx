@@ -9,7 +9,7 @@ const Logout = () => {
     await signOut(auth);
     setTimeout(() => {
       window.location = "/";
-    }, 1000);
+    }, 2000);
   };
   return (
     <div onClick={logout}>

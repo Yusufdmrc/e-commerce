@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import "./info.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productInfoAction } from "../../redux/actions/productInfo";
 import { RootState } from "../../redux/store";
-import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { basketAction } from "../../redux/actions/basket";
 import Header from "../../components/Header/Header";
 

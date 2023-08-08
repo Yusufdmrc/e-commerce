@@ -32,7 +32,7 @@ const Gender: React.FC<CategoryProps> = ({ setCategory }) => {
           <option value="">Gender</option>
           {filteredCategories.map((categoryName: string, index: number) => (
             <option key={index} value={categoryName}>
-              {categoryName === `men's clothing` ? "men" : "women"}
+              {categoryName === `men's clothing` ? "male" : "female"}
             </option>
           ))}
         </select>

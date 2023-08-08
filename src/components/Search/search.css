@@ -1,0 +1,7 @@
+@media (max-width: 576px) {
+  .search input {
+    width: 8rem;
+    height: 2rem;
+    margin-top: 0.8rem;
+  }
+}

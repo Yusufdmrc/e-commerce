@@ -1,31 +1,29 @@
-import axios, { AxiosResponse } from "axios";
 import { Dispatch } from "redux";
 import { CATEGORY_ACTION } from "../constants/ActionTypes";
 import { ProductData } from "../../Types/Type";
+import { CategoryAction } from "../constants/ActionTypes";
+import { getAllCategories, getProductsByCategory } from "../apiService";
 import { productDataAction } from "./productData";
-
-export interface CategoryAction {
-  type: typeof CATEGORY_ACTION;
-  payload: ProductData[];
-}
 
 export const getCategoryAction =
   (category: string) => async (dispatch: Dispatch<CategoryAction>) => {
-    const response: AxiosResponse<ProductData[]> = await axios.get<
-      ProductData[]
-    >(`https://fakestoreapi.com/products/category/${category}`);
-    const data = response.data;
+    try {
+      const data: ProductData[] = await getProductsByCategory(category);
 
-    dispatch({ type: CATEGORY_ACTION, payload: data });
-    dispatch(productDataAction());
+      dispatch({ type: CATEGORY_ACTION, payload: data });
+      dispatch(productDataAction());
+    } catch (error) {
+      console.error("Error fetching category data:", error);
+    }
   };
 
 export const categoryAction =
   () => async (dispatch: Dispatch<CategoryAction>) => {
-    const response: AxiosResponse<string[]> = await axios.get<string[]>(
-      "https://fakestoreapi.com/products/categories"
-    );
-    const data = response.data;
+    try {
+      const data: string[] = await getAllCategories();
 
-    dispatch({ type: CATEGORY_ACTION, payload: data });
+      dispatch({ type: CATEGORY_ACTION, payload: data });
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
   };

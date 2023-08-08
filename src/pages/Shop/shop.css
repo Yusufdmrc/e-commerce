@@ -39,3 +39,72 @@
   height: 5rem;
   column-gap: 0.5rem;
 }
+
+/* Responsive CSS for Shop Page */
+
+@media (max-width: 768px) {
+  .product-container {
+    justify-content: center;
+  }
+
+  .category-sort {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .category-sort > div {
+    margin: 0.5rem;
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .paginate {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .products {
+    padding: 0.5rem;
+  }
+
+  .category-sort {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0.5rem;
+  }
+
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+    width: 15rem;
+  }
+
+  .product-detail {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .paginate {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .paginate li {
+    margin: 0.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

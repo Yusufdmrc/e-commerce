@@ -7,10 +7,11 @@ import Logout from "../Auth/Logout";
 import Search from "../Search/Search";
 import ThemeChanger from "../ThemeChanger/ThemeChanger";
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const [mode, setMode] = useState(false);
   const dispatch = useDispatch();
   const { basketItems } = useSelector((state: RootState) => state.basket);
+  const { loggedIn } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     const root = document.getElementById("root");
@@ -28,7 +29,7 @@ const Navbar: React.FC = () => {
   return (
     <header>
       <div className="navbar-top">
-        <a href="/">Home</a>
+        <a href="/">E-commerce</a>
       </div>
       <div className="navbar">
         <div className="navbar-left">
@@ -57,4 +58,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Header;

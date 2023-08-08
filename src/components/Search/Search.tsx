@@ -13,7 +13,7 @@ const Search = () => {
     }
   };
   return (
-    <div>
+    <div className="search">
       <input
         value={search}
         onChange={(event) => setSearch(event.target.value)}

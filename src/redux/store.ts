@@ -8,6 +8,7 @@ import { productInfoReducer, ProductInfoState } from "./reducers/productInfo";
 import { basketReducer } from "./reducers/basket";
 import { searchReducer } from "./reducers/search";
 import { ProductData } from "../Types/Type";
+import authReducer from "./reducers/auth";
 
 interface BasketState {
   basketItems: ProductData[];
@@ -17,6 +18,10 @@ interface SearchState {
   search: ProductData[];
 }
 
+interface AuthState {
+  loggedIn: boolean;
+}
+
 export interface RootState {
   drawer: DrawerState;
   productData: ProductDataState;
@@ -24,6 +29,7 @@ export interface RootState {
   basket: BasketState;
   search: SearchState;
   category: CategoryState;
+  auth: AuthState;
 }
 
 const storedBasketItems = localStorage.getItem("basketItems");
@@ -43,6 +49,7 @@ const reducers = combineReducers({
   basket: basketReducer,
   search: searchReducer,
   category: categoryReducer,
+  auth: authReducer,
 });
 
 const store = createStore(

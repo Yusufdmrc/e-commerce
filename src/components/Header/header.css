@@ -59,3 +59,41 @@
 .logout {
   cursor: pointer;
 }
+
+/* Responsive CSS for Header Component */
+
+@media (max-width: 768px) {
+  .navbar-center {
+    /* display: none; */
+  }
+
+  .basket {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.7rem;
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    width: 100%;
+  }
+
+  .navbar-right {
+    margin-top: 1rem;
+  }
+
+  .basket {
+    margin-right: 0;
+  }
+
+  .icon {
+    font-size: 0.8rem;
+  }
+}

@@ -3,10 +3,11 @@ import "./home.css";
 import homeImg from "../../assets/img/e-commerce.jpg";
 import { useTranslation } from "react-i18next";
 import Language from "../../components/Language/Language";
+import { useDispatch, useSelector } from "react-redux";
 import Login from "../../components/Auth/Login";
 
 const Home: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
