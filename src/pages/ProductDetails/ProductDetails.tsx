@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./info.css";
+import "./productDetails.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productInfoAction } from "../../redux/actions/productInfo";
@@ -7,7 +7,7 @@ import { RootState } from "../../redux/store";
 import { basketAction } from "../../redux/actions/basket";
 import Header from "../../components/Header/Header";
 
-const Info = () => {
+const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
   const { productInfo } = useSelector((state: RootState) => state.productInfo);
@@ -57,4 +57,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default ProductDetails;

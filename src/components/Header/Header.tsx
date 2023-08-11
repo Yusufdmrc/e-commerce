@@ -33,7 +33,7 @@ const Header: React.FC = () => {
       </div>
       <div className="navbar">
         <div className="navbar-left">
-          <a href="/shop" className="icon">
+          <a href="/products  " className="icon">
             E-Commerce
           </a>
         </div>

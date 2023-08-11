@@ -13,7 +13,7 @@ export const ProductDetail: React.FC<ProductsProps> = ({
   return (
     <div className="product">
       <img
-        onClick={() => (window.location.href = `info/${product.id}`)}
+        onClick={() => (window.location.href = `productDetails/${product.id}`)}
         className="product-image"
         src={product.image}
         alt="img"
@@ -24,7 +24,7 @@ export const ProductDetail: React.FC<ProductsProps> = ({
         <span>Category:</span> {product?.category}
       </p>
       <button
-        onClick={() => (window.location.href = `info/${product.id}`)}
+        onClick={() => (window.location.href = `productDetails/${product.id}`)}
         className="btn"
       >
         Review

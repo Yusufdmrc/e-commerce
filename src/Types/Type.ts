@@ -1,5 +1,4 @@
 export interface ProductData {
-  length: number;
   id: number;
   title: string;
   price: number;
@@ -10,4 +9,5 @@ export interface ProductData {
   rate: number;
   count: number;
   amount: number;
+  length: number;
 }

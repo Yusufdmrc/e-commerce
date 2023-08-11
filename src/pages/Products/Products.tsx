@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { productDataAction } from "../../redux/actions/productData";
 import { RootState } from "../../redux/store";
 import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
-import "./shop.css";
+import "./products.css";
 import { searchAction } from "../../redux/actions/search";
 import { ProductData } from "../../Types/Type";
 import Header from "../../components/Header/Header";
@@ -12,7 +12,7 @@ import Category from "../../components/Category/Category";
 import Pagination from "../../components/Pagination/Pagination";
 import Gender from "../../components/Gender/Gender";
 
-const Shop: React.FC = () => {
+const Products: React.FC = () => {
   const dispatch = useDispatch();
   const { search } = useSelector((state: RootState) => state.search);
   const [sort, setSort] = useState<string>("");
@@ -86,4 +86,4 @@ const Shop: React.FC = () => {
   );
 };
 
-export default Shop;
+export default Products;

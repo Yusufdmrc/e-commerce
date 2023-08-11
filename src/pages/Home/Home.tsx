@@ -3,7 +3,7 @@ import "./home.css";
 import homeImg from "../../assets/img/e-commerce.jpg";
 import { useTranslation } from "react-i18next";
 import Language from "../../components/Language/Language";
-import { useDispatch, useSelector } from "react-redux";
+
 import Login from "../../components/Auth/Login";
 
 const Home: React.FC = () => {
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
           <h1 className="home-slogan">{t("home.slogan")}</h1>
           <p className="home-desc"></p>
           <button className="home-btn ">
-            <Link to="/shop">{t("home.explore")}</Link>
+            <Link to="/products">{t("home.explore")}</Link>
           </button>
         </div>
         <div className="home-right">
