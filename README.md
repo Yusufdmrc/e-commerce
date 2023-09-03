@@ -1,5 +1,4 @@
-Stajım sırasında hazırlamış olduğum e-ticaret projesi.
-----------------------------------------------------------
+
 Bu projede ilk kez typescript kullandım ve neden javascript yerine tercih edildiğinin farkına vardım.State yönetimi tarafında redux kullandım.Verileri Fake Store API'den çektim.
 
 Projemde ürünlerin listelenmesi,ürünlerin sepete eklenmesi,sepetteki ürünlerin fiyatlarının girilen adete göre değişmesi,ürünlerin kategori ve cinsiyete göre filtrelenmesi,ürünlerin fiyatlarının artan ve azalan olarak sıralanması ve pagination işlemlerini gerçekleştirdim.Bunun yanında basit seviyede dark-light mod değiştirme özelliği ve sadece ana sayfada çalışan tr-en dil değiştirme modu ekledim. 
