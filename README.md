@@ -3,31 +3,11 @@ Bu projede ilk kez typescript kullandım ve neden javascript yerine tercih edild
 
 Projemde ürünlerin listelenmesi,ürünlerin sepete eklenmesi,sepetteki ürünlerin fiyatlarının girilen adete göre değişmesi,ürünlerin kategori ve cinsiyete göre filtrelenmesi,ürünlerin fiyatlarının artan ve azalan olarak sıralanması ve pagination işlemlerini gerçekleştirdim.Bunun yanında basit seviyede dark-light mod değiştirme özelliği ve sadece ana sayfada çalışan tr-en dil değiştirme modu ekledim. 
 
+Ekran Görüntüleri
 
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<img width="1384" alt="Ekran Resmi 2023-09-06 20 44 38" src="https://github.com/Yusufdmrc/e-commerce/assets/90138891/c6982100-9dac-46d2-8d6f-466a790d5363">
+<img width="1384" alt="Ekran Resmi 2023-09-06 20 44 22" src="https://github.com/Yusufdmrc/e-commerce/assets/90138891/1aabe715-d73b-47c3-a5a6-9915c127c9d9">
+<img width="1384" alt="Ekran Resmi 2023-09-06 20 43 19" src="https://github.com/Yusufdmrc/e-commerce/assets/90138891/405fa4dc-8d4d-4868-b52e-616c2f4765a3">
+<img width="1384" alt="Ekran Resmi 2023-09-06 20 43 00" src="https://github.com/Yusufdmrc/e-commerce/assets/90138891/37277747-59db-408b-b0ed-73e23077aa75">
+<img width="1384" alt="Ekran Resmi 2023-09-06 20 42 48" src="https://github.com/Yusufdmrc/e-commerce/assets/90138891/5e447b70-93f6-4d4a-839a-0f78621d9892">
